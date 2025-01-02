@@ -1,26 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:toastification/src/core/constants_values.dart';
 
 class ToastificationType {
   final String name;
   final Color color;
-  final IconData icon;
-  const ToastificationType._(this.name, this.color, this.icon);
+  const ToastificationType._(this.name, this.color);
 
   // Built-in types
-  static const info =
-      ToastificationType._('info', infoColor, Iconsax.info_circle_copy);
-  static const success =
-      ToastificationType._('success', successColor, Iconsax.tick_circle_copy);
-  static const warning =
-      ToastificationType._('warning', warningColor, Iconsax.danger_copy);
-  static const error =
-      ToastificationType._('error', errorColor, Iconsax.close_circle_copy);
+  static const info = ToastificationType._('info', infoColor);
+  static const success = ToastificationType._('success', successColor);
+  static const warning = ToastificationType._('warning', warningColor);
+  static const error = ToastificationType._('error', errorColor);
 
   // Factory for custom types
   static ToastificationType custom(String name, Color color, IconData icon) {
-    return ToastificationType._(name, color, icon);
+    return ToastificationType._(name, color);
   }
 
   static List<ToastificationType> get defaultValues =>
@@ -35,7 +29,6 @@ class ToastificationType {
 
   @override
   int get hashCode => name.hashCode;
-
 
   @override
   String toString() {

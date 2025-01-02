@@ -11,7 +11,6 @@ abstract class BuiltInStyle {
   MaterialColor get primaryColor;
   Color get backgroundColor;
   Color get foregroundColor;
-  IconData get icon;
 
   Color get iconColor;
 

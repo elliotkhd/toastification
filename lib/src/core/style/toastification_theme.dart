@@ -17,7 +17,6 @@ class ToastificationTheme extends Equatable {
   final List<BoxShadow>? _boxShadow;
   final bool _showProgressBar;
   final bool _applyBlurEffect;
-  final bool _showIcon;
   final TextDirection _direction;
   final ProgressIndicatorThemeData? _progressIndicatorTheme;
 
@@ -47,7 +46,6 @@ class ToastificationTheme extends Equatable {
         _direction = direction,
         _showProgressBar = showProgressBar,
         _applyBlurEffect = applyBlurEffect,
-        _showIcon = showIcon,
         _progressIndicatorTheme = progressIndicatorTheme;
 
   // Getters that prioritize user-set values over default style values
@@ -75,12 +73,10 @@ class ToastificationTheme extends Equatable {
   TextDirection get direction => _direction;
   bool get showProgressBar => _showProgressBar;
   bool get applyBlurEffect => _applyBlurEffect;
-  bool get showIcon => _showIcon;
   ProgressIndicatorThemeData get progressIndicatorTheme =>
       _progressIndicatorTheme ?? selectedStyle.progressIndicatorTheme;
 
   // Additional getters that depend on the above properties
-  IconData get icon => selectedStyle.icon;
   Color get iconColor => selectedStyle.iconColor;
 
   IconData get closeIcon => selectedStyle.closeIcon;
@@ -142,7 +138,6 @@ class ToastificationTheme extends Equatable {
       direction: direction ?? _direction,
       showProgressBar: showProgressBar ?? _showProgressBar,
       applyBlurEffect: applyBlurEffect ?? _applyBlurEffect,
-      showIcon: showIcon ?? _showIcon,
       progressIndicatorTheme: progressIndicatorTheme ?? _progressIndicatorTheme,
     );
   }
@@ -160,7 +155,6 @@ class ToastificationTheme extends Equatable {
         _boxShadow,
         _showProgressBar,
         _applyBlurEffect,
-        _showIcon,
         _direction,
         _progressIndicatorTheme,
       ];

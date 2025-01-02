@@ -16,9 +16,6 @@ abstract class BaseStyle implements BuiltInStyle {
   Color get foregroundColor => ToastHelper.createMaterialColor(Colors.white);
 
   @override
-  IconData get icon => type.icon;
-
-  @override
   IconData get closeIcon => Icons.close;
 
   @override
